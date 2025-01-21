@@ -5,5 +5,10 @@
 {% endblock %}
 
 {% block main%}
-    <h1>Coding</h1>
+    <form action="/qrcode" method="post">
+        <div class="mb-3">
+            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" name="data" placeholder="URL" type="text">
+        </div>
+        <button class="button big" type="submit">Generate</button>
+    </form>
 {% endblock %}

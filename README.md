@@ -1,1 +1,1 @@
-# Python
+# Make a QR code generator in Python

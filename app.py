@@ -1,10 +1,11 @@
 import qrcode
 import qrcode.constants
 
-from flask import Flask, flash, redirect, render_template, request, session
+from flask import Flask, flash, redirect, render_template, request, session, send_file
+import os
 app = Flask(__name__)
-@app.route("/qrcode", methods=["GET", "POST"])
-def qrcode():
+@app.route("/qrs", methods=["GET", "POST"])
+def qrs():
     if request.method == "POST":
         """turns a string into a QR code"""
         data = request.form.get("data")
@@ -20,7 +21,8 @@ def qrcode():
         qr.add_data(data)
         qr.make(fit = True)
         img = qr.make_image(fill_color = color, back_color = "White")
-        return render_template("final.html", img = img)
+        cool = img.save("advanced.png")
+        return send_file(cool, as_attachment=True)
     else:
         return render_template("code.html")
 

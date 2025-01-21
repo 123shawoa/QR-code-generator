@@ -8,6 +8,8 @@
 	<head>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/fontawesome-all.min.css') }}">
 		<title>QR Code generator: {% block title %}{% endblock %}</title>
 	</head>
 	<body class="is-preload">
@@ -58,8 +60,8 @@
 										<h2>Menu</h2>
 									</header>
 									<ul>
-										<li><a href="homepage.html">Homepage</a></li>
-										<li><a href="code.html">Generate Qr code</a></li>
+										<li><a href="/">Homepage</a></li>
+										<li><a href="/qrs">Generate Qr code</a></li>
 										<li>
 									</ul>
 								</nav>

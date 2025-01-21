@@ -5,10 +5,20 @@
 {% endblock %}
 
 {% block main%}
-    <form action="/qrcode" method="post">
+    <form action="/qrs" method="post">
         <div class="mb-3">
-            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" name="data" placeholder="URL" type="text">
+            <input autocomplete="off" class="form-control mx-auto w-auto" name="data" placeholder="URL" type="text">
         </div>
+        <div class="mb-3">
+            <select class="form-control mx-auto w-auto" name="color">
+                <option value="" disabled selected>Select a color</option>
+                <option value="red">Red</option>
+                <option value="blue">Blue</option>
+                <option value="green">Green</option>
+                <option value="black">Black</option>
+                <option value="purple">Purple</option>
+            </select>
+            </div>
         <button class="button big" type="submit">Generate</button>
     </form>
 {% endblock %}

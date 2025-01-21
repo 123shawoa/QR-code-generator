@@ -4,6 +4,11 @@ import qrcode.constants
 from flask import Flask, flash, redirect, render_template, request, session, send_file
 import os
 app = Flask(__name__)
+@app.route("/")
+def home():
+    return render_template("homepage.html")
+
+
 @app.route("/qrs", methods=["GET", "POST"])
 def qrs():
     if request.method == "POST":
@@ -23,6 +28,7 @@ def qrs():
         img = qr.make_image(fill_color = color, back_color = "White")
         cool = img.save("advanced.png")
         return send_file(cool, as_attachment=True)
+        return redirect("/")
     else:
         return render_template("code.html")
 

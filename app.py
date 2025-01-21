@@ -20,7 +20,7 @@ def qrcode():
         qr.add_data(data)
         qr.make(fit = True)
         img = qr.make_image(fill_color = color, back_color = "White")
-        img.save("advanced.png")
+        return render_template("final.html", img = img)
     else:
         return render_template("code.html")
 
